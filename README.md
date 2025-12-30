@@ -62,8 +62,7 @@ VirtualBG/
 │   ├── bg1.jpg
 │   ├── bg2.png                   # Any Background
 │
-├── main.py                       # Full segmentation + compositing pipeline
-├── test.py
+├── final.py                    # Full segmentation + compositing pipeline
 │
 └── README.md
 ```
