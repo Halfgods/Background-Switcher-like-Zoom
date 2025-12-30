@@ -22,7 +22,8 @@ A **real-time, local-only** virtual background replacement system built with **P
 > * **No Server-Side Processing:** All frames are processed on the user's machine.
 > * **No Streaming:** Webcam data never leaves the local system.
 > * **No Storage:** No video or image data is saved unless explicitly added as a background.
->
+>* **Path Issues:** Kindly change the path of model as well as backgrounds folder
+>  
 > Users are fully responsible for how they use this software in accordance with privacy policies and local regulations.
 
 ---
@@ -38,6 +39,13 @@ This project focuses on **core computer vision fundamentals** rather than UI pol
 * 🖥️ **Local & Transparent:** Easy to debug and extend for learning purposes.
 
 ---
+## How to run it
+```python
+streamlit run final.py
+```
+
+---
+
 
 ## 📦 Tech Stack
 
