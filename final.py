@@ -60,7 +60,7 @@ video_col, control_col = st.columns([2, 1], gap="medium")
 with control_col:
     # Create bordered container effect
     with st.container(border=True):
-        st.header("🖼️ Background Controls" , text_alignment="center" , divider=True)
+        st.header(" Background Controls" , text_alignment="center" , divider=True)
         
         # ---- Upload ----
         uploaded_file = st.file_uploader(
@@ -79,7 +79,7 @@ with control_col:
 
             st.session_state.current_bg_img = cv.imread(save_path)
             st.session_state.last_uploaded_name = uploaded_file.name
-            st.success("✨ Background uploaded & selected")
+            st.success(" Background uploaded & selected")
 
             # Refresh grid
             bg_images_paths = load_bg_paths()
@@ -107,7 +107,7 @@ with control_col:
                                 type="secondary"
                             ):
                                 st.session_state.current_bg_img = cv.imread(img_path)
-                                st.toast("✅ Background selected", icon="✨")
+                                st.toast("Background selected")
                             
                             # Display image inside the button area
                             st.image(img_path, width="content")
@@ -122,15 +122,15 @@ with control_col:
                 if i + 2 < len(bg_images_paths):
                     st.divider()
         else:
-            st.info("💡 No backgrounds yet. Upload one to get started!")
+            st.info("No backgrounds yet. Upload one to get started!")
 
 # ===================== VIDEO PANEL =====================
 with video_col:
     # Create bordered container effect
     with st.container(border=True , horizontal_alignment="center"):
-        st.subheader("📸 Live Camera Feed" , text_alignment="center" , divider=True)
+        st.subheader("Live Camera Feed" , text_alignment="center" , divider=True)
         
-        run = st.toggle("🎬 Start Camera", value=True)
+        run = st.toggle("Start Camera", value=True)
         
         frame_placeholder = st.empty()
 
@@ -141,7 +141,7 @@ with video_col:
                 while run:
                     ret, frame = cap.read()
                     if not ret:
-                        st.error("⚠️ Camera not detected")
+                        st.error("Camera not detected")
                         break
 
                     frame = cv.flip(frame, 1)
@@ -191,7 +191,7 @@ with video_col:
 
         else:
             with frame_placeholder.container():
-                st.info("🎯 **Ready to start!**")
+                st.info("**Ready to start!**")
                 st.markdown("""
                 1. Select a background from the gallery or upload your own
                 2. Enable **Start Camera** to begin the magic
@@ -199,4 +199,5 @@ with video_col:
                 """)
 
 st.divider()
-st.caption("✨ Powered by MediaPipe Selfie Segmentation")
+
+st.caption("Powered by MediaPipe Selfie Segmentation")
